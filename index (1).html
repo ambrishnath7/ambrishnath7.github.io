@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ambrish – Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF1F6; --paper:#FFFFFF; --ink:#14213D; --muted:#5B6784;
+    --accent:#2B50FF; --line:#D5DBE8;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0F1626;--paper:#18223A;--ink:#E8ECF8;--muted:#9AA6C4;--accent:#7C95FF;--line:#2A3555}
+    .btn.primary{color:#0F1626}
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.6;font-size:18px}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  header.hero{padding:96px 0 64px}
+  .hero h1{font-size:clamp(3rem,9vw,6.5rem);line-height:.95;margin:0 0 24px;
+    font-weight:800;letter-spacing:-.03em}
+  .hero p{max-width:34em;color:var(--muted);margin:0 0 32px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;
+    text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  section{padding:48px 0}
+  h2{font-size:2rem;margin:0 0 8px;letter-spacing:-.02em}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:36em}
+
+  .project{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+  .receipt{background:var(--paper);padding:28px 28px 24px;border-radius:4px;
+    font-family:'IBM Plex Mono',monospace;font-size:15px;
+    border-top:6px solid var(--accent);
+    box-shadow:0 1px 0 var(--line)}
+  .receipt h3{margin:0 0 4px;font-size:1.1rem;font-weight:500}
+  .receipt .meta{color:var(--muted);margin:0 0 16px}
+  .receipt ul{list-style:none;margin:0;padding:16px 0;border-top:1px dashed var(--ink);
+    border-bottom:1px dashed var(--ink)}
+  .receipt li{display:flex;justify-content:space-between;gap:16px;padding:3px 0}
+  .receipt li span:last-child{color:var(--muted);white-space:nowrap}
+  .receipt .total{display:flex;justify-content:space-between;padding-top:14px;font-weight:500}
+
+  .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+  .stack h3{font-size:1.1rem;margin:0 0 8px}
+  .stack ul{margin:0;padding:0;list-style:none;color:var(--muted)}
+  .stack li{padding:2px 0}
+
+  .flow{width:100%;height:auto}
+  .flow rect{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+  .flow rect.hl{stroke:var(--accent);stroke-width:2.5}
+  .flow text{fill:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:15px;text-anchor:middle}
+  .flow text.s{fill:var(--muted);font-size:12.5px}
+  .flow path{stroke:var(--muted);stroke-width:1.8;fill:none;marker-end:url(#a)}
+  .flow marker path{fill:var(--muted);stroke:none;marker-end:none}
+
+  footer{padding:48px 0 72px;color:var(--muted);border-top:1px solid var(--line)}
+
+  @media (max-width:760px){
+    .project{grid-template-columns:1fr}
+    header.hero{padding:64px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Ambrish builds web apps end to end.</h1>
+    <p>Software developer at Conprg Technologies in Chennai. I work with C#, ASP.NET Core and SQL Server on the backend, and React on the frontend.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/ambrishnath7/Restore">View the code</a>
+      <a class="btn" href="https://github.com/ambrishnath7">GitHub profile</a>
+      <!-- Add your demo video button here once it is recorded:
+      <a class="btn" href="YOUR_VIDEO_LINK">Watch the demo</a> -->
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap project">
+      <div>
+        <h2>Restore</h2>
+        <p class="sub">A full-stack e-commerce store: browse products, fill a basket, pay with Stripe, and manage stock as an admin. Here is what is in the order.</p>
+        <p class="sub">Backend in .NET 9 with Entity Framework Core and ASP.NET Core Identity. Frontend in React 19 with Redux Toolkit Query and Material UI.</p>
+        <a href="https://github.com/ambrishnath7/Restore">Read the README on GitHub</a>
+      </div>
+
+      <div class="receipt" role="group" aria-label="Restore feature list styled as a receipt">
+        <h3>Restore store</h3>
+        <p class="meta">Order of features</p>
+        <ul>
+          <li><span>Product catalog</span><span>paging, search, filters</span></li>
+          <li><span>Shopping basket</span><span>persistent</span></li>
+          <li><span>Stripe checkout</span><span>3D Secure</span></li>
+          <li><span>Orders</span><span>history</span></li>
+          <li><span>Login</span><span>ASP.NET Identity</span></li>
+          <li><span>Admin inventory</span><span>create, edit, delete</span></li>
+          <li><span>Image upload</span><span>Cloudinary</span></li>
+          <li><span>Role-based access</span><span>API and client</span></li>
+        </ul>
+        <div class="total"><span>Total</span><span>1 working app</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How Restore fits together</h2>
+      <p class="sub">The React app talks to a .NET API. The API owns the data and the two outside services.</p>
+      <svg class="flow" viewBox="0 0 900 250" role="img" aria-label="Diagram: React client calls the .NET Web API through RTK Query. The API uses Entity Framework Core with SQLite, Stripe for payments and Cloudinary for images.">
+        <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs>
+        <rect class="hl" x="20" y="95" width="200" height="70" rx="10"/>
+        <text x="120" y="125">React 19 client</text><text class="s" x="120" y="146">RTK Query, MUI</text>
+        <rect class="hl" x="350" y="95" width="200" height="70" rx="10"/>
+        <text x="450" y="125">.NET 9 Web API</text><text class="s" x="450" y="146">Identity, AutoMapper</text>
+        <rect x="680" y="15" width="200" height="60" rx="10"/>
+        <text x="780" y="42">EF Core</text><text class="s" x="780" y="60">SQLite database</text>
+        <rect x="680" y="95" width="200" height="60" rx="10"/>
+        <text x="780" y="122">Stripe</text><text class="s" x="780" y="140">payments</text>
+        <rect x="680" y="175" width="200" height="60" rx="10"/>
+        <text x="780" y="202">Cloudinary</text><text class="s" x="780" y="220">product images</text>
+        <path d="M222 130H346"/><path d="M552 115L676 50"/><path d="M552 130H676"/><path d="M552 145L676 205"/>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What I work with</h2>
+      <p class="sub">The tools behind Restore and my day-to-day work.</p>
+      <div class="stack">
+        <div>
+          <h3>Backend</h3>
+          <ul><li>C#</li><li>ASP.NET Core Web API</li><li>Entity Framework Core</li><li>SQL Server, SQLite</li></ul>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <ul><li>React and TypeScript</li><li>Redux Toolkit Query</li><li>Material UI</li><li>React Hook Form and Zod</li></ul>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <ul><li>Stripe payments</li><li>Cloudinary images</li><li>Git and GitHub</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Ambrish, Software Developer, Conprg Technologies, Chennai.
+    <a href="https://github.com/ambrishnath7">github.com/ambrishnath7</a>
+  </div>
+</footer>
+
+</body>
+</html>
